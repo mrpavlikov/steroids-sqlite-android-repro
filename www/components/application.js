@@ -58,7 +58,7 @@ DB.prototype.FetchOne = function(query, params, callback) {
     var self = this;
     self.Exec(query, params, function(err, res) {
         if (err) return callback(err);
-        ret = res.rows.length ? res.rows.item(0) : false;
+        var ret = res.rows.length ? res.rows.item(0) : false;
         return callback(null, ret);
     });
 };
